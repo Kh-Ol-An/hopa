@@ -19,12 +19,12 @@ findWin.addEventListener("click", handleFindWin);
 function handleFindWin() {
   modal.classList.add("modal-hiding");
   girl.classList.add("girl-hiding-down");
-  setTimeout(rotateCard, 500);
+  setTimeout(rotateCards, 500);
   setTimeout(appearMix, 1000);
   setTimeout(appearHand, 1500);
 }
 
-function rotateCard() {
+function rotateCards() {
   cardFaceDowns.forEach(cardFaceDown =>
     cardFaceDown.classList.add("card-face-down-rotate")
   );
@@ -65,25 +65,46 @@ function randomInteger(min, max) {
   return Math.floor(rand);
 }
 
-// let random = randomInteger(1, 3);
-let random = 1;
-let randomCard1 = "card1-shuffle" + random;
-let randomCard2 = "card2-shuffle" + random;
-let randomCard3 = "card3-shuffle" + random;
-
-document.documentElement.style.setProperty("--translate1", 18 + "vw");
-document.documentElement.style.setProperty("--translate2", 43 + "vw");
-document.documentElement.style.setProperty("--translate3", 68 + "vw");
-
-let c1 = new DOMMatrix(getComputedStyle(card1).transform).m41;
-
-console.log("transform", c1);
-// console.log("transform2", card1.getPropertyValue("transform"));
-
 function shuffleCards() {
-  card1.classList.add(randomCard1);
-  card2.classList.add(randomCard2);
-  card3.classList.add(randomCard3);
+  let random = randomInteger(1, 3);
+  // let random = 1;
+  let randomClassCard1Shuffle = "card1-shuffle" + random;
+  let randomClassCard2Shuffle = "card2-shuffle" + random;
+  let randomClassCard3Shuffle = "card3-shuffle" + random;
+
+  const classShuffle1 = card1.classList[2];
+  const classShuffle2 = card2.classList[2];
+  const classShuffle3 = card3.classList[2];
+
+  let card1TranslateX = new DOMMatrix(getComputedStyle(card1).transform)
+    .m41;
+  let card2TranslateX = new DOMMatrix(getComputedStyle(card2).transform)
+    .m41;
+  let card3TranslateX = new DOMMatrix(getComputedStyle(card3).transform)
+    .m41;
+
+  document.documentElement.style.setProperty(
+    "--card1TranslateX",
+    card1TranslateX + "px"
+  );
+  document.documentElement.style.setProperty(
+    "--card2TranslateX",
+    card2TranslateX + "px"
+  );
+  document.documentElement.style.setProperty(
+    "--card3TranslateX",
+    card3TranslateX + "px"
+  );
+
+  if (!classShuffle1) {
+    card1.classList.add(randomClassCard1Shuffle);
+    card2.classList.add(randomClassCard2Shuffle);
+    card3.classList.add(randomClassCard3Shuffle);
+  } else {
+    card1.classList.replace(classShuffle1, randomClassCard1Shuffle);
+    card2.classList.replace(classShuffle2, randomClassCard2Shuffle);
+    card3.classList.replace(classShuffle3, randomClassCard3Shuffle);
+  }
 }
 
 function handleCard1() {
@@ -97,6 +118,10 @@ function handleCard1() {
   card2.removeEventListener("click", handleCard2);
   card3.removeEventListener("click", handleCard3);
   setTimeout(rotateCard23, 1000);
+
+  // ==========
+
+  setTimeout(appearMix, 1500);
 }
 
 function rotateCard23() {
@@ -119,6 +144,10 @@ function handleCard2() {
   card2.removeEventListener("click", handleCard2);
   card3.removeEventListener("click", handleCard3);
   setTimeout(rotateCard13, 1000);
+
+  // ==========
+
+  setTimeout(appearMix, 1500);
 }
 
 function rotateCard13() {
@@ -141,6 +170,10 @@ function handleCard3() {
   card2.removeEventListener("click", handleCard2);
   card3.removeEventListener("click", handleCard3);
   setTimeout(rotateCard12, 1000);
+
+  // ==========
+
+  setTimeout(appearMix, 1500);
 }
 
 function rotateCard12() {

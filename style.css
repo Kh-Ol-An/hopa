@@ -67,7 +67,7 @@ button:focus {
   background: url("./images/bg.jpg") center / cover no-repeat;
   overflow: hidden;
 }
-.c,
+
 .logo,
 .question,
 .close,
@@ -120,7 +120,7 @@ button:focus {
   height: 100%;
   background: rgba(0, 0, 0, 0.82);
   transition: opacity 500ms ease-in;
-  z-index: 2;
+  z-index: 12;
 }
 
 .modal-hiding {
@@ -149,7 +149,7 @@ button:focus {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: transform 200ms ease-in;
-  z-index: 3;
+  z-index: 13;
 }
 
 .find-win {
@@ -187,7 +187,7 @@ button:focus {
   right: 9.6em;
   bottom: 0;
   transition: all 500ms ease-in;
-  z-index: 2;
+  z-index: 12;
 }
 
 .girl-hiding-down {
@@ -203,19 +203,25 @@ button:focus {
   transition: all 500ms ease-in;
 }
 
+/* +++++++++++++++++++++++CARD 1+++++++++++++++++++++++ */
+
 .card1 {
   transform: translateX(18vw);
+  z-index: 1;
 }
+
+/* ---------SHUFFLE 1--------- */
 
 .card1-shuffle1 {
   transform: translateX(68vw);
   animation: card1-shuffle1 3000ms ease-in;
+  z-index: 3;
 }
 
 @keyframes card1-shuffle1 {
-  /* 0% {
-    transform: translateX(18vw);
-  } */
+  0% {
+    transform: translateX(var(--card1TranslateX));
+  }
   40% {
     transform: translate(40vw, -5%);
   }
@@ -230,19 +236,18 @@ button:focus {
   }
 }
 
-.card2 {
-  transform: translateX(var(--translate2));
+/* ---------SHUFFLE 2--------- */
+
+.card1-shuffle2 {
+  transform: translateX(18vw);
+  animation: card1-shuffle2 3000ms ease-in;
+  z-index: 1;
 }
 
-.card2-shuffle1 {
-  transform: translateX(var(--translate1));
-  animation: card2-shuffle1 3000ms ease-in;
-}
-
-@keyframes card2-shuffle1 {
-  /* 0% {
-    transform: translateX(var(--translate2));
-  } */
+@keyframes card1-shuffle2 {
+  0% {
+    transform: translateX(var(--card1TranslateX));
+  }
   40% {
     transform: translate(43vw, 0%);
   }
@@ -253,45 +258,21 @@ button:focus {
     transform: translate(46vw, -5%);
   }
   100% {
-    transform: translateX(var(--translate1));
+    transform: translateX(18vw);
   }
 }
 
-.card3 {
-  transform: translateX(var(--translate3));
-}
+/* ---------SHUFFLE 3--------- */
 
-.card3-shuffle1 {
-  transform: translateX(var(--translate2));
-  animation: card3-shuffle1 3000ms ease-in;
-}
-
-@keyframes card3-shuffle1 {
-  /* 0% {
-    transform: translateX(var(--translate3));
-  } */
-  40% {
-    transform: translate(46vw, 5%);
-  }
-  50% {
-    transform: translate(43vw, -5%);
-  }
-  60% {
-    transform: translate(40vw, 0%);
-  }
-  100% {
-    transform: translateX(var(--translate2));
-  }
-}
-
-/* .card3-shuffle2 {
+.card1-shuffle3 {
   transform: translateX(43vw);
-  animation: card3-shuffle2 3000ms ease-in;
+  animation: card1-shuffle3 3000ms ease-in;
+  z-index: 2;
 }
 
-@keyframes card3-shuffle2 {
+@keyframes card1-shuffle3 {
   0% {
-    transform: translateX(var(--translate3));
+    transform: translateX(var(--card1TranslateX));
   }
   40% {
     transform: translate(46vw, 5%);
@@ -305,7 +286,177 @@ button:focus {
   100% {
     transform: translateX(43vw);
   }
-} */
+}
+
+/* +++++++++++++++++++++++CARD 2+++++++++++++++++++++++ */
+
+.card2 {
+  transform: translateX(43vw);
+  z-index: 2;
+}
+
+/* ---------SHUFFLE 1--------- */
+
+.card2-shuffle1 {
+  transform: translateX(18vw);
+  animation: card2-shuffle1 3000ms ease-in;
+  z-index: 2;
+}
+
+@keyframes card2-shuffle1 {
+  0% {
+    transform: translateX(var(--card2TranslateX));
+  }
+  40% {
+    transform: translate(43vw, 0%);
+  }
+  50% {
+    transform: translate(40vw, 5%);
+  }
+  60% {
+    transform: translate(46vw, -5%);
+  }
+  100% {
+    transform: translateX(18vw);
+  }
+}
+
+/* ---------SHUFFLE 2--------- */
+
+.card2-shuffle2 {
+  transform: translateX(43vw);
+  animation: card2-shuffle2 3000ms ease-in;
+  z-index: 3;
+}
+
+@keyframes card2-shuffle2 {
+  0% {
+    transform: translateX(var(--card2TranslateX));
+  }
+  40% {
+    transform: translate(46vw, 5%);
+  }
+  50% {
+    transform: translate(43vw, -5%);
+  }
+  60% {
+    transform: translate(40vw, 0%);
+  }
+  100% {
+    transform: translateX(43vw);
+  }
+}
+
+/* ---------SHUFFLE 3--------- */
+
+.card2-shuffle3 {
+  transform: translateX(68vw);
+  animation: card2-shuffle3 3000ms ease-in;
+  z-index: 1;
+}
+
+@keyframes card2-shuffle3 {
+  0% {
+    transform: translateX(var(--card2TranslateX));
+  }
+  40% {
+    transform: translate(40vw, -5%);
+  }
+  50% {
+    transform: translate(46vw, 0%);
+  }
+  60% {
+    transform: translate(43vw, 5%);
+  }
+  100% {
+    transform: translateX(68vw);
+  }
+}
+
+/* +++++++++++++++++++++++CARD 3+++++++++++++++++++++++ */
+
+.card3 {
+  transform: translateX(68vw);
+  z-index: 3;
+}
+
+/* ---------SHUFFLE 1--------- */
+
+.card3-shuffle1 {
+  transform: translateX(43vw);
+  animation: card3-shuffle1 3000ms ease-in;
+  z-index: 1;
+}
+
+@keyframes card3-shuffle1 {
+  0% {
+    transform: translateX(var(--card3TranslateX));
+  }
+  40% {
+    transform: translate(46vw, 5%);
+  }
+  50% {
+    transform: translate(43vw, -5%);
+  }
+  60% {
+    transform: translate(40vw, 0%);
+  }
+  100% {
+    transform: translateX(43vw);
+  }
+}
+
+/* ---------SHUFFLE 2--------- */
+
+.card3-shuffle2 {
+  transform: translateX(68vw);
+  animation: card3-shuffle2 3000ms ease-in;
+  z-index: 2;
+}
+
+@keyframes card3-shuffle2 {
+  0% {
+    transform: translateX(var(--card3TranslateX));
+  }
+  40% {
+    transform: translate(40vw, -5%);
+  }
+  50% {
+    transform: translate(46vw, 0%);
+  }
+  60% {
+    transform: translate(43vw, 5%);
+  }
+  100% {
+    transform: translateX(68vw);
+  }
+}
+
+/* ---------SHUFFLE 3--------- */
+
+.card3-shuffle3 {
+  transform: translateX(18vw);
+  animation: card3-shuffle3 3000ms ease-in;
+  z-index: 3;
+}
+
+@keyframes card3-shuffle3 {
+  0% {
+    transform: translateX(var(--card3TranslateX));
+  }
+  40% {
+    transform: translate(43vw, 0%);
+  }
+  50% {
+    transform: translate(40vw, 5%);
+  }
+  60% {
+    transform: translate(46vw, -5%);
+  }
+  100% {
+    transform: translateX(18vw);
+  }
+}
 
 .card-face-down,
 .ace-club,
@@ -354,7 +505,7 @@ button:focus {
 .left-hand {
   width: 42.9em;
   left: 40em;
-  z-index: 1;
+  z-index: 11;
 }
 
 .left-hand-appear {
@@ -364,7 +515,7 @@ button:focus {
 .right-hand {
   width: 42em;
   right: 30em;
-  z-index: 1;
+  z-index: 11;
 }
 
 .right-hand-appear {
