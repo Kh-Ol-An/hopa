@@ -65,9 +65,14 @@ function randomInteger(min, max) {
   return Math.floor(rand);
 }
 
+let repeatRandom;
 function shuffleCards() {
   let random = randomInteger(1, 3);
-  // let random = 1;
+
+  while (random === repeatRandom) {
+    random = randomInteger(1, 3);
+  }
+
   let randomClassCard1Shuffle = "card1-shuffle" + random;
   let randomClassCard2Shuffle = "card2-shuffle" + random;
   let randomClassCard3Shuffle = "card3-shuffle" + random;
@@ -76,12 +81,9 @@ function shuffleCards() {
   const classShuffle2 = card2.classList[2];
   const classShuffle3 = card3.classList[2];
 
-  let card1TranslateX = new DOMMatrix(getComputedStyle(card1).transform)
-    .m41;
-  let card2TranslateX = new DOMMatrix(getComputedStyle(card2).transform)
-    .m41;
-  let card3TranslateX = new DOMMatrix(getComputedStyle(card3).transform)
-    .m41;
+  let card1TranslateX = new DOMMatrix(getComputedStyle(card1).transform).m41;
+  let card2TranslateX = new DOMMatrix(getComputedStyle(card2).transform).m41;
+  let card3TranslateX = new DOMMatrix(getComputedStyle(card3).transform).m41;
 
   document.documentElement.style.setProperty(
     "--card1TranslateX",
@@ -105,6 +107,7 @@ function shuffleCards() {
     card2.classList.replace(classShuffle2, randomClassCard2Shuffle);
     card3.classList.replace(classShuffle3, randomClassCard3Shuffle);
   }
+  repeatRandom = random;
 }
 
 function handleCard1() {
