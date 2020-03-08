@@ -1,0 +1,77 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  font-size: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+​img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+}
+
+.main-mobile,
+.main-desktop {
+  width: 100%;
+  height: 100vh;
+  background: #0c1d08;
+  overflow: hidden;
+}
+
+.main-mobile {
+  position: relative;
+  background: #0c1d08;
+}
+
+.main-desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../../images/bg.jpg") center / cover no-repeat;
+}
+
+.logo,
+.question,
+.close,
+.modal,
+.find-win,
+.mix,
+.again,
+.won,
+.girl,
+.card,
+.card-face-down,
+.ace-club,
+.joker,
+.ace-heart,
+.left-hand,
+.right-hand,
+.best-score,
+.current-score,
+.spot,
+.girl-mobile,
+.rotate-device,
+.wellcome-bonuse {
+  position: absolute;
+}

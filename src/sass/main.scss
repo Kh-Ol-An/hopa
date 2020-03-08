@@ -1,0 +1,16 @@
+/*
+ * Все паршалы импортировать в этот файл
+ */
+
+@import "normalize.scss";
+@import "reset.scss";
+@import "base.scss";
+
+// components
+@import "./components/header.scss";
+@import "./components/modal.scss";
+@import "./components/cards.scss";
+@import "./components/footer.scss";
+@import "./components/footer-mobile.scss";
+
+@import "media.scss";

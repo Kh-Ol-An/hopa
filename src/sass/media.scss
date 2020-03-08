@@ -1,0 +1,78 @@
+@media (max-width: 1919px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 1679px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 1359px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 1279px) {
+  html {
+    font-size: 5px;
+  }
+}
+
+@media (max-width: 1023px) {
+  html {
+    font-size: 3.6px;
+  }
+
+  .main-mobile {
+    padding: 3.8em 0 4.7em;
+  }
+
+  .main-desktop {
+    height: 31.87vh;
+    top: 14em;
+    overflow: unset;
+  }
+
+  .logo {
+    width: 17.8em;
+    height: 6.7em;
+    top: -10.35em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .question {
+    top: 4em;
+  }
+
+  .girl {
+    display: none;
+  }
+
+  .card {
+    top: 14em;
+  }
+
+  .left-hand {
+    left: 22em;
+  }
+
+  .right-hand {
+    right: 7em;
+  }
+
+  .spot,
+  .rotate-device,
+  .wellcome-bonuse {
+    font-size: 10px;
+    display: inline-block;
+  }
+
+  .girl-mobile {
+    display: inline-block;
+  }
+}

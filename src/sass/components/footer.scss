@@ -1,0 +1,41 @@
+.left-hand,
+.right-hand {
+  height: 0;
+  bottom: 0;
+  transition: all 500ms ease-in;
+}
+
+.left-hand {
+  width: 42.9em;
+  left: 40em;
+  z-index: 11;
+}
+
+.left-hand-appear {
+  height: 62em;
+}
+
+.right-hand {
+  width: 42em;
+  right: 35em;
+  z-index: 11;
+}
+
+.right-hand-appear {
+  height: 54.1em;
+}
+
+.best-score,
+.current-score {
+  width: 41em;
+  height: 17.5em;
+  bottom: 5.5em;
+}
+
+.best-score {
+  left: 13em;
+}
+
+.current-score {
+  right: 13em;
+}

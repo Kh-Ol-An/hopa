@@ -1,0 +1,39 @@
+.spot,
+.girl-mobile,
+.rotate-device,
+.wellcome-bonuse {
+  display: none;
+}
+
+.spot {
+  width: 50.4em;
+  height: 52em;
+  bottom: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.girl-mobile,
+.rotate-device {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.girl-mobile {
+  width: 60.8em;
+  height: 94.7em;
+  bottom: 20%;
+}
+
+.rotate-device {
+  width: 38.7em;
+  height: 21.6em;
+  bottom: 16%;
+}
+
+.wellcome-bonuse {
+  width: 100%;
+  height: 11.2em;
+  bottom: 4.2em;
+  left: 0;
+}
