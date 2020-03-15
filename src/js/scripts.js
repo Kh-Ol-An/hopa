@@ -10,13 +10,15 @@ const girl = document.querySelector('.girl');
 const card1 = document.querySelector('.card1');
 const card2 = document.querySelector('.card2');
 const card3 = document.querySelector('.card3');
+const btnCard1 = document.querySelector('.btnCard1');
+const btnCard2 = document.querySelector('.btnCard2');
+const btnCard3 = document.querySelector('.btnCard3');
 const cardFaceDowns = document.querySelectorAll('.card-face-down');
 const aceClub = document.querySelector('.ace-club');
 const joker = document.querySelector('.joker');
 const aceHeart = document.querySelector('.ace-heart');
 const leftHand = document.querySelector('.left-hand');
 const rightHand = document.querySelector('.right-hand');
-
 
 findWin.addEventListener('click', function() {
   modal.classList.add('modal-hiding');
@@ -60,10 +62,11 @@ function handleMix() {
   joker.classList.remove('joker-rotate');
   aceHeart.classList.remove('ace-heart-rotate');
   question.classList.add('question-appear');
+  again.classList.remove('again-appear');
   setTimeout(shuffleCards, 1000);
-  card1.addEventListener('click', handleCard1);
-  card2.addEventListener('click', handleCard2);
-  card3.addEventListener('click', handleCard3);
+  btnCard1.addEventListener('click', handleCard1);
+  btnCard2.addEventListener('click', handleCard2);
+  btnCard3.addEventListener('click', handleCard3);
   mix.removeEventListener('click', handleMix);
   again.removeEventListener('click', handleMix);
 }
@@ -108,12 +111,18 @@ function shuffleCards() {
 
   if (!classShuffle1) {
     card1.classList.add(randomClassCard1Shuffle);
+    btnCard1.classList.add(randomClassCard1Shuffle);
     card2.classList.add(randomClassCard2Shuffle);
+    btnCard2.classList.add(randomClassCard2Shuffle);
     card3.classList.add(randomClassCard3Shuffle);
+    btnCard3.classList.add(randomClassCard3Shuffle);
   } else {
     card1.classList.replace(classShuffle1, randomClassCard1Shuffle);
+    btnCard1.classList.replace(classShuffle1, randomClassCard1Shuffle);
     card2.classList.replace(classShuffle2, randomClassCard2Shuffle);
+    btnCard2.classList.replace(classShuffle2, randomClassCard2Shuffle);
     card3.classList.replace(classShuffle3, randomClassCard3Shuffle);
+    btnCard3.classList.replace(classShuffle3, randomClassCard3Shuffle);
   }
   repeatRandom = random;
 }
@@ -125,9 +134,9 @@ function handleCard1() {
   );
   aceClub.classList.add('ace-club-rotate');
 
-  card1.removeEventListener('click', handleCard1);
-  card2.removeEventListener('click', handleCard2);
-  card3.removeEventListener('click', handleCard3);
+  btnCard1.removeEventListener('click', handleCard1);
+  btnCard2.removeEventListener('click', handleCard2);
+  btnCard3.removeEventListener('click', handleCard3);
   setTimeout(rotateCard, 1000, 1, 2);
 
   setTimeout(appearAfterShuffle, 3500, again);
@@ -141,9 +150,9 @@ function handleCard2() {
   );
   joker.classList.add('joker-rotate');
 
-  card1.removeEventListener('click', handleCard1);
-  card2.removeEventListener('click', handleCard2);
-  card3.removeEventListener('click', handleCard3);
+  btnCard1.removeEventListener('click', handleCard1);
+  btnCard2.removeEventListener('click', handleCard2);
+  btnCard3.removeEventListener('click', handleCard3);
   setTimeout(rotateCard, 1000, 0, 2);
 
   setTimeout(appearAfterShuffle, 1500, won);
@@ -156,9 +165,9 @@ function handleCard3() {
   );
   aceHeart.classList.add('ace-heart-rotate');
 
-  card1.removeEventListener('click', handleCard1);
-  card2.removeEventListener('click', handleCard2);
-  card3.removeEventListener('click', handleCard3);
+  btnCard1.removeEventListener('click', handleCard1);
+  btnCard2.removeEventListener('click', handleCard2);
+  btnCard3.removeEventListener('click', handleCard3);
   setTimeout(rotateCard, 1000, 0, 1);
 
   setTimeout(appearAfterShuffle, 3500, again);

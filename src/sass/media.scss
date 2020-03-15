@@ -22,9 +22,14 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1023px),
+  (max-width: 1080px) and (min--moz-device-pixel-ratio: 2),
+  (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 2),
+  (max-width: 1080px) and (-o-min-device-pixel-ratio: 2/1),
+  (max-width: 1080px) and (min-device-pixel-ratio: 2) {
   html {
     font-size: 3.6px;
+    // font-size: 0.7rem;
   }
 
   .main-mobile {
@@ -46,33 +51,55 @@
   }
 
   .question {
-    top: 4em;
+    font-size: 0.7rem;
+    top: 6em;
   }
 
   .girl {
     display: none;
   }
 
-  .card {
-    top: 14em;
+  .card,
+  .btnCard1,
+  .btnCard2,
+  .btnCard3 {
+    font-size: 0.7rem;
+    top: 18em;
   }
 
   .left-hand {
+    font-size: 0.7rem;
     left: 22em;
   }
 
   .right-hand {
+    font-size: 0.7rem;
     right: 7em;
+  }
+
+  .best-score,
+  .current-score {
+    font-size: 0.7rem;
   }
 
   .spot,
   .rotate-device,
   .wellcome-bonuse {
-    font-size: 10px;
+    font-size: 17px;
     display: inline-block;
   }
 
   .girl-mobile {
+    font-size: 7px;
     display: inline-block;
+  }
+}
+
+@media (min--moz-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (-o-min-device-pixel-ratio: 2/1),
+  (min-device-pixel-ratio: 2) {
+  html {
+    font-size: 0.6rem; // 7.5px
   }
 }

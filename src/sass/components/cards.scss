@@ -9,7 +9,8 @@
 
 /* +++++++++++++++++++++++CARD 1+++++++++++++++++++++++ */
 
-.card1 {
+.card1,
+.btnCard1 {
   transform: translateX(18vw);
   z-index: 1;
 }
@@ -106,7 +107,8 @@
 
 /* +++++++++++++++++++++++CARD 2+++++++++++++++++++++++ */
 
-.card2 {
+.card2,
+.btnCard2 {
   transform: translateX(43vw);
   z-index: 2;
 }
@@ -203,7 +205,8 @@
 
 /* +++++++++++++++++++++++CARD 3+++++++++++++++++++++++ */
 
-.card3 {
+.card3,
+.btnCard3 {
   transform: translateX(68vw);
   z-index: 3;
 }
@@ -333,4 +336,16 @@
 .img-card {
   width: 100%;
   height: 100%;
+}
+
+.btnCard1,
+.btnCard2,
+.btnCard3 {
+  width: 34.6em;
+  height: 51.8em;
+  top: 29.8em;
+  left: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 7;
 }
