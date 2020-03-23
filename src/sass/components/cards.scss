@@ -10,7 +10,7 @@
 /* +++++++++++++++++++++++CARD 1+++++++++++++++++++++++ */
 
 .card1,
-.btnCard1 {
+.btn-card1 {
   transform: translateX(18vw);
   z-index: 1;
 }
@@ -108,7 +108,7 @@
 /* +++++++++++++++++++++++CARD 2+++++++++++++++++++++++ */
 
 .card2,
-.btnCard2 {
+.btn-card2 {
   transform: translateX(43vw);
   z-index: 2;
 }
@@ -206,7 +206,7 @@
 /* +++++++++++++++++++++++CARD 3+++++++++++++++++++++++ */
 
 .card3,
-.btnCard3 {
+.btn-card3 {
   transform: translateX(68vw);
   z-index: 3;
 }
@@ -338,13 +338,9 @@
   height: 100%;
 }
 
-.btnCard1,
-.btnCard2,
-.btnCard3 {
-  width: 34.6em;
-  height: 51.8em;
-  top: 29.8em;
-  left: 0;
+.btn-card1,
+.btn-card2,
+.btn-card3 {
   background: transparent;
   cursor: pointer;
   z-index: 7;

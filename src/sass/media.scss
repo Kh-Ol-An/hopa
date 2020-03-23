@@ -1,3 +1,5 @@
+// WIDTH
+
 @media (max-width: 1919px) {
   html {
     font-size: 8px;
@@ -22,16 +24,124 @@
   }
 }
 
-@media (max-width: 1023px),
-  (max-width: 1080px) and (min--moz-device-pixel-ratio: 2),
-  (max-width: 1080px) and (-webkit-min-device-pixel-ratio: 2),
-  (max-width: 1080px) and (-o-min-device-pixel-ratio: 2/1),
-  (max-width: 1080px) and (min-device-pixel-ratio: 2) {
+@media (max-width: 767px) {
   html {
-    font-size: 3.6px;
-    // font-size: 0.7rem;
+    font-size: 4.5px;
+  }
+}
+
+@media (max-width: 599px) {
+  html {
+    font-size: 4px;
+  }
+}
+
+@media (max-width: 549px) {
+  html {
+    font-size: 3.8px;
+  }
+}
+
+@media (max-width: 479px) {
+  html {
+    font-size: 2.6px;
   }
 
+  .spot {
+    font-size: 10px;
+    bottom: 13%;
+  }
+
+  .girl-mobile {
+    bottom: 21%;
+  }
+
+  .rotate-device {
+    font-size: 9px;
+  }
+
+  .wellcome-bonuse {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 411px) {
+  html {
+    font-size: 2.4px;
+  }
+
+  .spot {
+    font-size: 9px;
+    bottom: 9%;
+  }
+
+  .girl-mobile {
+    bottom: 19%;
+  }
+
+  .rotate-device {
+    font-size: 7px;
+    bottom: 15%;
+  }
+
+  .wellcome-bonuse {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 374px) {
+  html {
+    font-size: 2.2px;
+  }
+}
+
+@media (max-width: 359px) {
+  html {
+    font-size: 1.8px;
+  }
+
+  .spot {
+    font-size: 7px;
+  }
+
+  .rotate-device {
+    font-size: 5px;
+  }
+
+  .wellcome-bonuse {
+    font-size: 4px;
+  }
+}
+
+// HEIGHT
+
+@media (max-height: 469px) {
+  html {
+    font-size: 4px;
+  }
+}
+
+@media (max-height: 413px) {
+  html {
+    font-size: 3.6px;
+  }
+}
+
+@media (max-height: 373px) {
+  html {
+    font-size: 3.4px;
+  }
+}
+
+@media (max-height: 349px) {
+  html {
+    font-size: 3px;
+  }
+}
+
+// PORTRAIT
+
+@media (orientation: portrait) {
   .main-mobile {
     padding: 3.8em 0 4.7em;
   }
@@ -51,55 +161,21 @@
   }
 
   .question {
-    font-size: 0.7rem;
-    top: 6em;
+    top: 4em;
   }
 
   .girl {
     display: none;
   }
 
-  .card,
-  .btnCard1,
-  .btnCard2,
-  .btnCard3 {
-    font-size: 0.7rem;
-    top: 18em;
-  }
-
-  .left-hand {
-    font-size: 0.7rem;
-    left: 22em;
-  }
-
-  .right-hand {
-    font-size: 0.7rem;
-    right: 7em;
-  }
-
-  .best-score,
-  .current-score {
-    font-size: 0.7rem;
+  .card {
+    top: 14em;
   }
 
   .spot,
+  .girl-mobile,
   .rotate-device,
   .wellcome-bonuse {
-    font-size: 17px;
     display: inline-block;
-  }
-
-  .girl-mobile {
-    font-size: 7px;
-    display: inline-block;
-  }
-}
-
-@media (min--moz-device-pixel-ratio: 2),
-  (-webkit-min-device-pixel-ratio: 2),
-  (-o-min-device-pixel-ratio: 2/1),
-  (min-device-pixel-ratio: 2) {
-  html {
-    font-size: 0.6rem; // 7.5px
   }
 }
