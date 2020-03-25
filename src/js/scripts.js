@@ -61,7 +61,6 @@ function handleMix() {
   aceClub.classList.remove('ace-club-rotate');
   joker.classList.remove('joker-rotate');
   aceHeart.classList.remove('ace-heart-rotate');
-  question.classList.add('question-appear');
   again.classList.remove('again-appear');
   setTimeout(shuffleCards, 1000);
   btnCard1.addEventListener('click', handleCard1);

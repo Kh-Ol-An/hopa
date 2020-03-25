@@ -1,7 +1,8 @@
 .card {
   width: 34.6em;
   height: 51.8em;
-  top: 29.8em;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   perspective: 500px;
   transition: all 500ms ease-in;
@@ -11,97 +12,97 @@
 
 .card1,
 .btn-card1 {
-  transform: translateX(18vw);
+  transform: translate(18vw, -50%);
   z-index: 1;
 }
 
 /* ---------SHUFFLE 1--------- */
 
 .card1-shuffle1 {
-  transform: translateX(68vw);
+  transform: translate(68vw, -50%);
   animation: card1-shuffle1 3000ms ease-in;
   z-index: 3;
 }
 
 @keyframes card1-shuffle1 {
   0% {
-    transform: translateX(var(--card1TranslateX));
+    transform: translate(var(--card1TranslateX), -50%);
   }
 
   40% {
-    transform: translate(40vw, -5%);
+    transform: translate(40vw, -45%);
   }
 
   50% {
-    transform: translate(46vw, 0%);
+    transform: translate(46vw, -50%);
   }
 
   60% {
-    transform: translate(43vw, 5%);
+    transform: translate(43vw, -55%);
   }
 
   100% {
-    transform: translateX(68vw);
+    transform: translate(68vw, -50%);
   }
 }
 
 /* ---------SHUFFLE 2--------- */
 
 .card1-shuffle2 {
-  transform: translateX(18vw);
+  transform: translate(18vw, -50%);
   animation: card1-shuffle2 3000ms ease-in;
   z-index: 1;
 }
 
 @keyframes card1-shuffle2 {
   0% {
-    transform: translateX(var(--card1TranslateX));
+    transform: translate(var(--card1TranslateX), -50%);
   }
 
   40% {
-    transform: translate(43vw, 0%);
+    transform: translate(43vw, -50%);
   }
 
   50% {
-    transform: translate(40vw, 5%);
+    transform: translate(40vw, -55%);
   }
 
   60% {
-    transform: translate(46vw, -5%);
+    transform: translate(46vw, -45%);
   }
 
   100% {
-    transform: translateX(18vw);
+    transform: translate(18vw, -50%);
   }
 }
 
 /* ---------SHUFFLE 3--------- */
 
 .card1-shuffle3 {
-  transform: translateX(43vw);
+  transform: translate(43vw, -50%);
   animation: card1-shuffle3 3000ms ease-in;
   z-index: 2;
 }
 
 @keyframes card1-shuffle3 {
   0% {
-    transform: translateX(var(--card1TranslateX));
+    transform: translate(var(--card1TranslateX), -50%);
   }
 
   40% {
-    transform: translate(46vw, 5%);
+    transform: translate(46vw, -55%);
   }
 
   50% {
-    transform: translate(43vw, -5%);
+    transform: translate(43vw, -45%);
   }
 
   60% {
-    transform: translate(40vw, 0%);
+    transform: translate(40vw, -50%);
   }
 
   100% {
-    transform: translateX(43vw);
+    transform: translate(43vw, -50%);
   }
 }
 
@@ -109,97 +110,97 @@
 
 .card2,
 .btn-card2 {
-  transform: translateX(43vw);
+  transform: translate(43vw, -50%);
   z-index: 2;
 }
 
 /* ---------SHUFFLE 1--------- */
 
 .card2-shuffle1 {
-  transform: translateX(18vw);
+  transform: translate(18vw, -50%);
   animation: card2-shuffle1 3000ms ease-in;
   z-index: 2;
 }
 
 @keyframes card2-shuffle1 {
   0% {
-    transform: translateX(var(--card2TranslateX));
+    transform: translate(var(--card2TranslateX), -50%);
   }
 
   40% {
-    transform: translate(43vw, 0%);
+    transform: translate(43vw, -50%);
   }
 
   50% {
-    transform: translate(40vw, 5%);
+    transform: translate(40vw, -55%);
   }
 
   60% {
-    transform: translate(46vw, -5%);
+    transform: translate(46vw, -45%);
   }
 
   100% {
-    transform: translateX(18vw);
+    transform: translate(18vw, -50%);
   }
 }
 
 /* ---------SHUFFLE 2--------- */
 
 .card2-shuffle2 {
-  transform: translateX(43vw);
+  transform: translate(43vw, -50%);
   animation: card2-shuffle2 3000ms ease-in;
   z-index: 3;
 }
 
 @keyframes card2-shuffle2 {
   0% {
-    transform: translateX(var(--card2TranslateX));
+    transform: translate(var(--card2TranslateX), -50%);
   }
 
   40% {
-    transform: translate(46vw, 5%);
+    transform: translate(46vw, -55%);
   }
 
   50% {
-    transform: translate(43vw, -5%);
+    transform: translate(43vw, -45%);
   }
 
   60% {
-    transform: translate(40vw, 0%);
+    transform: translate(40vw, -50%);
   }
 
   100% {
-    transform: translateX(43vw);
+    transform: translate(43vw, -50%);
   }
 }
 
 /* ---------SHUFFLE 3--------- */
 
 .card2-shuffle3 {
-  transform: translateX(68vw);
+  transform: translate(68vw, -50%);
   animation: card2-shuffle3 3000ms ease-in;
   z-index: 1;
 }
 
 @keyframes card2-shuffle3 {
   0% {
-    transform: translateX(var(--card2TranslateX));
+    transform: translate(var(--card2TranslateX), -50%);
   }
 
   40% {
-    transform: translate(40vw, -5%);
+    transform: translate(40vw, -45%);
   }
 
   50% {
-    transform: translate(46vw, 0%);
+    transform: translate(46vw, -50%);
   }
 
   60% {
-    transform: translate(43vw, 5%);
+    transform: translate(43vw, -55%);
   }
 
   100% {
-    transform: translateX(68vw);
+    transform: translate(68vw, -50%);
   }
 }
 
@@ -207,97 +208,97 @@
 
 .card3,
 .btn-card3 {
-  transform: translateX(68vw);
+  transform: translate(68vw, -50%);
   z-index: 3;
 }
 
 /* ---------SHUFFLE 1--------- */
 
 .card3-shuffle1 {
-  transform: translateX(43vw);
+  transform: translate(43vw, -50%);
   animation: card3-shuffle1 3000ms ease-in;
   z-index: 1;
 }
 
 @keyframes card3-shuffle1 {
   0% {
-    transform: translateX(var(--card3TranslateX));
+    transform: translate(var(--card3TranslateX), -50%);
   }
 
   40% {
-    transform: translate(46vw, 5%);
+    transform: translate(46vw, -55%);
   }
 
   50% {
-    transform: translate(43vw, -5%);
+    transform: translate(43vw, -45%);
   }
 
   60% {
-    transform: translate(40vw, 0%);
+    transform: translate(40vw, -50%);
   }
 
   100% {
-    transform: translateX(43vw);
+    transform: translate(43vw, -50%);
   }
 }
 
 /* ---------SHUFFLE 2--------- */
 
 .card3-shuffle2 {
-  transform: translateX(68vw);
+  transform: translate(68vw, -50%);
   animation: card3-shuffle2 3000ms ease-in;
   z-index: 2;
 }
 
 @keyframes card3-shuffle2 {
   0% {
-    transform: translateX(var(--card3TranslateX));
+    transform: translate(var(--card3TranslateX), -50%);
   }
 
   40% {
-    transform: translate(40vw, -5%);
+    transform: translate(40vw, -45%);
   }
 
   50% {
-    transform: translate(46vw, 0%);
+    transform: translate(46vw, -50%);
   }
 
   60% {
-    transform: translate(43vw, 5%);
+    transform: translate(43vw, -55%);
   }
 
   100% {
-    transform: translateX(68vw);
+    transform: translate(68vw, -50%);
   }
 }
 
 /* ---------SHUFFLE 3--------- */
 
 .card3-shuffle3 {
-  transform: translateX(18vw);
+  transform: translate(18vw, -50%);
   animation: card3-shuffle3 3000ms ease-in;
   z-index: 3;
 }
 
 @keyframes card3-shuffle3 {
   0% {
-    transform: translateX(var(--card3TranslateX));
+    transform: translate(var(--card3TranslateX), -50%);
   }
 
   40% {
-    transform: translate(43vw, 0%);
+    transform: translate(43vw, -50%);
   }
 
   50% {
-    transform: translate(40vw, 5%);
+    transform: translate(40vw, -55%);
   }
 
   60% {
-    transform: translate(46vw, -5%);
+    transform: translate(46vw, -45%);
   }
 
   100% {
-    transform: translateX(18vw);
+    transform: translate(18vw, -50%);
   }
 }
 
