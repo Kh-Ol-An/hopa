@@ -30,7 +30,7 @@
 
 .find-win,
 .mix,
-.again,
+.wrong,
 .won {
   top: 50%;
   left: 50%;
@@ -48,6 +48,60 @@
   width: 0;
 }
 
+.find-win__text {
+  width: fit-content;
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0px 9px 10px rgba(0, 0, 0, 1);
+  color: #ffd500;
+}
+
+.find__text {
+  font-size: 7.2rem;
+}
+
+.win__text {
+  font-size: 18.8rem;
+  font-weight: 700;
+}
+
+.find__text.gm {
+  font-size: 43px;
+}
+
+.win__text.gm {
+  font-size: 46px;
+}
+
+.find__text.fi {
+  font-size: 47px;
+}
+
+.win__text.fi {
+  font-size: 68px;
+}
+
+.find__text.es {
+  font-size: 27px;
+}
+
+.win__text.es {
+  font-size: 72px;
+}
+
+.find__text.no {
+  font-size: 8.4rem;
+}
+
+.win__text.no {
+  font-size: 13.6rem;
+}
+
 .mix {
   width: 0;
   height: 25.1em;
@@ -57,12 +111,12 @@
   width: 42.9em;
 }
 
-.again {
+.wrong {
   width: 0;
   height: 43.5em;
 }
 
-.again-appear {
+.wrong-appear {
   width: 67.6em;
 }
 
@@ -77,14 +131,14 @@
 
 .find-win:hover,
 .mix:hover,
-.again:hover,
+.wrong:hover,
 .won:hover {
   transform: translate(-50%, -50%) scale(1.009);
 }
 
 .find-win > img,
 .mix > img,
-.again > img,
+.wrong > img,
 .won > img {
   width: 100%;
   height: 100%;
@@ -99,6 +153,6 @@
   z-index: 12;
 }
 
-.girl-hiding-down {
+.girl-hiding {
   opacity: 0;
 }
