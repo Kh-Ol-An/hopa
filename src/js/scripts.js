@@ -5,6 +5,9 @@ const findWin = document.querySelector('.find-win');
 const mix = document.querySelector('.mix');
 const wrong = document.querySelector('.wrong');
 const won = document.querySelector('.won');
+const wrongClaim = document.querySelector('.wrong-claim');
+const wonClaim = document.querySelector('.won-claim');
+const again = document.querySelector('.again');
 const girl = document.querySelector('.girl');
 const card1 = document.querySelector('.card1');
 const card2 = document.querySelector('.card2');
@@ -19,65 +22,13 @@ const aceHeart = document.querySelector('.ace-heart');
 const leftHand = document.querySelector('.left-hand');
 const rightHand = document.querySelector('.right-hand');
 
-findWin.addEventListener('click', handleFindWin);
-
-function handleFindWin() {
-  modal.classList.add('modal-hiding');
-  girl.classList.add('girl-hiding');
-  setTimeout(rotateCards, 500);
-  setTimeout(appearMix, 3000);
-  setTimeout(appearHand, 3500);
-  mix.addEventListener('click', handleMix);
-}
-
-function rotateCards() {
-  cardFaceDowns.forEach(cardFaceDown =>
-    cardFaceDown.classList.add('card-face-down-rotate'),
-  );
-  aceClub.classList.add('ace-club-rotate');
-  joker.classList.add('joker-rotate');
-  aceHeart.classList.add('ace-heart-rotate');
-};
-
-function appearModal() {
-  findWin.classList.add('find-win-hiding');
-  modal.classList.remove('modal-hiding');
-}
-
-function appearMix() {
-  appearModal();
-  mix.classList.add('mix-appear');
-}
-
-function appearHand() {
-  leftHand.classList.add('left-hand-appear');
-  rightHand.classList.add('right-hand-appear');
-}
-
-function handleMix() {
-  modal.classList.add('modal-hiding');
-  cardFaceDowns.forEach(cardFaceDown =>
-    cardFaceDown.classList.remove('card-face-down-rotate'),
-  );
-  aceClub.classList.remove('ace-club-rotate');
-  joker.classList.remove('joker-rotate');
-  aceHeart.classList.remove('ace-heart-rotate');
-  wrong.classList.remove('wrong-appear');
-  setTimeout(shuffleCards, 1000);
-  setTimeout(() => btnCard1.addEventListener('click', handleCard1), 3000);
-  setTimeout(() => btnCard2.addEventListener('click', handleCard2), 3000);
-  setTimeout(() => btnCard3.addEventListener('click', handleCard3), 3000);
-  mix.removeEventListener('click', handleMix);
-  wrong.removeEventListener('click', handleMix);
-}
-
-function randomInteger(min, max) {
+const randomInteger = (min, max) => {
   let rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
-}
+};
 
 let repeatRandom;
-function shuffleCards() {
+const shuffleCards = () => {
   let random = randomInteger(1, 3);
 
   while (random === repeatRandom) {
@@ -125,9 +76,36 @@ function shuffleCards() {
     btnCard3.classList.replace(classShuffle3, randomClassCard3Shuffle);
   }
   repeatRandom = random;
-}
+};
 
-function handleCard1() {
+const rotateCard = (firstCard, secondCard) => {
+  cardFaceDowns.forEach((cardFaceDown, idx) => {
+    idx === firstCard && cardFaceDown.classList.add('card-face-down-rotate');
+    idx === secondCard && cardFaceDown.classList.add('card-face-down-rotate');
+  });
+  firstCard === 0 && aceClub.classList.add('ace-club-rotate');
+  firstCard === 1 && joker.classList.add('joker-rotate');
+  firstCard === 2 && aceHeart.classList.add('ace-heart-rotate');
+  secondCard === 0 && aceClub.classList.add('ace-club-rotate');
+  secondCard === 1 && joker.classList.add('joker-rotate');
+  secondCard === 2 && aceHeart.classList.add('ace-heart-rotate');
+};
+
+const appearModal = () => {
+  findWin.style.width = "0";
+  modal.classList.remove('modal-hiding');
+};
+
+const appearAfterShuffle = (el) => {
+  appearModal();
+  girl.style.opacity = "1";
+  mix.style.width = "0";
+  el === won ? wonClaim.style.width = "23em" : wrongClaim.style.width = "29.2em";
+  el === wrong && (again.style.width = "29.2em");
+  el.classList.add(`${el.classList}-appear`);
+};
+
+const handleCard1 = () => {
   cardFaceDowns.forEach(
     (cardFaceDown, idx) =>
       idx === 0 && cardFaceDown.classList.add('card-face-down-rotate'),
@@ -140,10 +118,10 @@ function handleCard1() {
   setTimeout(rotateCard, 1000, 1, 2);
 
   setTimeout(appearAfterShuffle, 3500, wrong);
-  wrong.addEventListener('click', handleMix);
-}
+  again.addEventListener('click', handleMix);
+};
 
-function handleCard2() {
+const handleCard2 = () => {
   cardFaceDowns.forEach(
     (cardFaceDown, idx) =>
       idx === 1 && cardFaceDown.classList.add('card-face-down-rotate'),
@@ -156,9 +134,9 @@ function handleCard2() {
   setTimeout(rotateCard, 1000, 0, 2);
 
   setTimeout(appearAfterShuffle, 1500, won);
-}
+};
 
-function handleCard3() {
+const handleCard3 = () => {
   cardFaceDowns.forEach(
     (cardFaceDown, idx) =>
       idx === 2 && cardFaceDown.classList.add('card-face-down-rotate'),
@@ -171,24 +149,54 @@ function handleCard3() {
   setTimeout(rotateCard, 1000, 0, 1);
 
   setTimeout(appearAfterShuffle, 3500, wrong);
-  wrong.addEventListener('click', handleMix);
-}
+  again.addEventListener('click', handleMix);
+};
 
-function rotateCard(firstCard, secondCard) {
-  cardFaceDowns.forEach((cardFaceDown, idx) => {
-    idx === firstCard && cardFaceDown.classList.add('card-face-down-rotate');
-    idx === secondCard && cardFaceDown.classList.add('card-face-down-rotate');
-  });
-  firstCard === 0 && aceClub.classList.add('ace-club-rotate');
-  firstCard === 1 && joker.classList.add('joker-rotate');
-  firstCard === 2 && aceHeart.classList.add('ace-heart-rotate');
-  secondCard === 0 && aceClub.classList.add('ace-club-rotate');
-  secondCard === 1 && joker.classList.add('joker-rotate');
-  secondCard === 2 && aceHeart.classList.add('ace-heart-rotate');
-}
+const handleMix = () => {
+  modal.classList.add('modal-hiding');
+  cardFaceDowns.forEach(cardFaceDown =>
+    cardFaceDown.classList.remove('card-face-down-rotate'),
+  );
+  aceClub.classList.remove('ace-club-rotate');
+  joker.classList.remove('joker-rotate');
+  aceHeart.classList.remove('ace-heart-rotate');
+  wrong.classList.remove('wrong-appear');
+  again.style.width = "0";
+  wonClaim.style.width = "0";
+  wrongClaim.style.width = "0";
+  setTimeout(shuffleCards, 1000);
+  setTimeout(() => btnCard1.addEventListener('click', handleCard1), 3000);
+  setTimeout(() => btnCard2.addEventListener('click', handleCard2), 3000);
+  setTimeout(() => btnCard3.addEventListener('click', handleCard3), 3000);
+  mix.removeEventListener('click', handleMix);
+  again.removeEventListener('click', handleMix);
+};
 
-function appearAfterShuffle(button) {
+const rotateCards = () => {
+  cardFaceDowns.forEach(cardFaceDown =>
+    cardFaceDown.classList.add('card-face-down-rotate'),
+  );
+  aceClub.classList.add('ace-club-rotate');
+  joker.classList.add('joker-rotate');
+  aceHeart.classList.add('ace-heart-rotate');
+};
+
+const appearMix = () => {
   appearModal();
-  mix.classList.remove('mix-appear');
-  button.classList.add(`${button.classList}-appear`);
-}
+  mix.style.width = "42.9em";
+};
+
+const appearHand = () => {
+  leftHand.style.height = "62em";
+  rightHand.style.height = "54.1em";
+};
+
+const handleFindWin = () => {
+  modal.classList.add('modal-hiding');
+  girl.style.opacity = "0";
+  setTimeout(rotateCards, 500);
+  setTimeout(appearMix, 3000);
+  setTimeout(appearHand, 3500);
+  mix.addEventListener('click', handleMix);
+};
+findWin.addEventListener('click', handleFindWin);

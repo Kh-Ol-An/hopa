@@ -1,6 +1,7 @@
 .modal {
   width: 100%;
   height: 100%;
+  position: absolute;
   background: rgba(0, 0, 0, 0.82);
   transition: opacity 500ms ease-in;
   z-index: 12;
@@ -32,6 +33,7 @@
 .mix,
 .wrong,
 .won {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -41,105 +43,66 @@
 
 .find-win {
   width: 79.2em;
-  height: 54em;
 }
 
-.find-win-hiding {
-  width: 0;
-}
-
-.find-win__text {
-  width: fit-content;
-  position: absolute;
-  top: 52%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  text-shadow: 0px 9px 10px rgba(0, 0, 0, 1);
-  color: #ffd500;
-}
-
-.find__text {
-  font-size: 7.2rem;
-}
-
-.win__text {
-  font-size: 18.8rem;
-  font-weight: 700;
-}
-
-.find__text.gm {
-  font-size: 43px;
-}
-
-.win__text.gm {
-  font-size: 46px;
-}
-
-.find__text.fi {
-  font-size: 47px;
-}
-
-.win__text.fi {
-  font-size: 68px;
-}
-
-.find__text.es {
-  font-size: 27px;
-}
-
-.win__text.es {
-  font-size: 72px;
-}
-
-.find__text.no {
-  font-size: 8.4rem;
-}
-
-.win__text.no {
-  font-size: 13.6rem;
-}
-
-.mix {
-  width: 0;
-  height: 25.1em;
-}
-
-.mix-appear {
-  width: 42.9em;
-}
-
+.mix,
+.won,
 .wrong {
   width: 0;
-  height: 43.5em;
 }
 
 .wrong-appear {
-  width: 67.6em;
-}
-
-.won {
-  width: 0;
-  height: 54em;
-}
-
-.won-appear {
   width: 79.2em;
 }
 
+.won-appear {
+  width: 59.65em;
+}
+
 .find-win:hover,
-.mix:hover,
-.wrong:hover,
-.won:hover {
+.mix:hover {
   transform: translate(-50%, -50%) scale(1.009);
 }
 
-.find-win > img,
-.mix > img,
-.wrong > img,
-.won > img {
+.won-claim {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2.5em;
+  bottom: 10%;
+  transition: transform 200ms ease-in;
+}
+
+.again,
+.wrong-claim {
+  position: absolute;
+  bottom: 14%;
+  transition: transform 200ms ease-in;
+}
+
+.again {
+  left: 10%;
+}
+
+.wrong-claim {
+  right: 10%;
+}
+
+.won-claim:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.again:hover,
+.wrong-claim:hover {
+  transform: scale(1.05);
+}
+
+.find-win_img,
+.mix_img,
+.wrong_img,
+.won_img,
+.claim_img,
+.again_img {
   width: 100%;
   height: 100%;
 }
@@ -147,12 +110,9 @@
 .girl {
   width: 60.8em;
   height: 94.7em;
-  right: 9.6em;
+  position: absolute;
+  right: 7%;
   bottom: 0;
   transition: all 500ms ease-in;
   z-index: 12;
-}
-
-.girl-hiding {
-  opacity: 0;
 }

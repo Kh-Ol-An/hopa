@@ -1,6 +1,7 @@
 .logo {
   width: 19.7em;
   height: 7.3em;
+  position: absolute;
   top: 3.3em;
   left: 3.7em;
 }
@@ -10,18 +11,10 @@
   height: 100%;
 }
 
-// .question {
-//   width: 88.8em;
-//   height: 10em;
-//   top: 13.3em;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   transition: all 500ms ease-in 500ms;
-// }
-
 .question__text {
   font-size: 8rem;
   width: fit-content;
+  position: absolute;
   top: 10%;
   left: 50%;
   margin-right: -50%;
