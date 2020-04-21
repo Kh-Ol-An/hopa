@@ -32,30 +32,21 @@ const langs = [
 //   currency = prompt('usd     eur     gbp     zar\n\rВалюта:');
 // };
 
-let language;
-if (window.navigator) {
-  if (window.navigator.languages && window.navigator.languages.length) {
-    // latest versions of Chrome and Firefox set this correctly
-    language = window.navigator.languages[0]
-  } else if (window.navigator.userLanguage) {
-    // IE only
-    language = window.navigator.userLanguage
-  } else {
-    // latest versions of Chrome, Firefox, and Safari set this correctly
-    language = window.navigator.language
-  }
-} else {
+let language = window.navigator ? (window.navigator.language || window.navigator.systemLanguage || window.navigator.userLanguage) : "en";
+language = language.substr(0, 2).toLowerCase();
+
+if (language === "nn" || language === "nb") {
+  language = "no";
+} else if (language !== "en" && language !== "de" && language !== "fi" && language !== "es" && language !== "no") {
   language = "en";
 };
-language = language.substr(0, 2).toLowerCase();
-if (language !== "en" || language !== "de" || language !== "fi" || language !== "es" || language !== "no") {
-  language = "en"
-}
 
 let currency;
 if (language === 'en') {
   currency = prompt('usd     eur     gbp     zar\n\rВалюта:');
 };
+
+// console.log("language", language)
 
 const questionText = document.querySelector('.question__text');
 const findWin = document.querySelector('.find-win_img');
