@@ -59,10 +59,6 @@
   .rotate-device {
     font-size: 9px;
   }
-
-  .wellcome-bonuse {
-    font-size: 8px;
-  }
 }
 
 @media (max-width: 411px) {
@@ -83,10 +79,6 @@
     font-size: 7px;
     bottom: 15%;
   }
-
-  .wellcome-bonuse {
-    font-size: 6px;
-  }
 }
 
 @media (max-width: 374px) {
@@ -106,10 +98,6 @@
 
   .rotate-device {
     font-size: 5px;
-  }
-
-  .wellcome-bonuse {
-    font-size: 4px;
   }
 }
 
@@ -170,8 +158,7 @@
 
   .spot,
   .girl-mobile,
-  .rotate-device,
-  .wellcome-bonuse {
+  .rotate-device {
     display: inline-block;
   }
 }

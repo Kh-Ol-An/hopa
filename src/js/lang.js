@@ -6,7 +6,7 @@ const langs = [
     "question": "Where is the joker?"
   },
   {
-    "lang": "gm",
+    "lang": "de",
     "question": "Wo ist der Joker?"
   },
   {
@@ -25,7 +25,33 @@ const langs = [
 
 // const language = "gm" // en gm fi es no
 // const currency = "zar" // usd eur gbp zar
-const language = prompt('en     gm     fi     es     no\n\rЯзык:');
+
+// const language = prompt('en     gm     fi     es     no\n\rЯзык:');
+// let currency;
+// if (language === 'en') {
+//   currency = prompt('usd     eur     gbp     zar\n\rВалюта:');
+// };
+
+let language;
+if (window.navigator) {
+  if (window.navigator.languages && window.navigator.languages.length) {
+    // latest versions of Chrome and Firefox set this correctly
+    language = window.navigator.languages[0]
+  } else if (window.navigator.userLanguage) {
+    // IE only
+    language = window.navigator.userLanguage
+  } else {
+    // latest versions of Chrome, Firefox, and Safari set this correctly
+    language = window.navigator.language
+  }
+} else {
+  language = "en";
+};
+language = language.substr(0, 2).toLowerCase();
+if (language !== "en" || language !== "de" || language !== "fi" || language !== "es" || language !== "no") {
+  language = "en"
+}
+
 let currency;
 if (language === 'en') {
   currency = prompt('usd     eur     gbp     zar\n\rВалюта:');
@@ -38,6 +64,7 @@ const won = document.querySelector('.won_img');
 const wrong = document.querySelector('.wrong_img');
 const claims = document.querySelectorAll('.claim_img');
 const again = document.querySelector('.again_img');
+const rotate = document.querySelector('.rotate-device');
 
 langs.forEach(lang => {
   if (lang.lang === language) {
@@ -53,5 +80,6 @@ langs.forEach(lang => {
     }
     claims.forEach(claim => claim.setAttribute("src", `./images/${language}/claim.png`))
     again.setAttribute("src", `./images/${language}/again.png`);
+    rotate.setAttribute("src", `./images/${language}/rotate.png`);
   }
 })
