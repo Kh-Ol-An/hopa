@@ -41,10 +41,7 @@ if (language === "nn" || language === "nb") {
   language = "en";
 };
 
-let currency;
-if (language === 'en') {
-  currency = prompt('usd     eur     gbp     zar\n\rВалюта:');
-};
+const currency = "usd";
 
 // console.log("language", language)
 
